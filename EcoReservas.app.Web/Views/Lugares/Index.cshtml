@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EcoReservasEN.Lugares>
+
+@{
+    ViewData["Title"] = "Index";
+    bool isAdmin = User.Identity.IsAuthenticated && User.IsInRole("Admin");
+}
+<br />
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <img src="@item.ImagenUrl" class="card-img-top card-img" alt="@item.Nombre">
+                <div class="card-body">
+                    <div class="center">
+                        <h5 class="card-title">@item.Nombre</h5>
+                        <hr class="separador" />
+                        <p class="card-text">@item.Descripcion</p>
+                   
+                        <a href="#" class="btn btn-primary">Ver más</a>
+                    
+                        @if (isAdmin)
+                        {
+                            <td >
+                                <a href="@Url.Action("Edit", new {pId = item.Id})" class="btn btn-success"><i>EDITAR</i></a>
+
+                                <a href="@Url.Action("Delete", new {pId = item.Id})" class="btn btn-danger"><i>BORRAR</i></a>
+                            </td>
+
+                      
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

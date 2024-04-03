@@ -1,0 +1,201 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.bg-morado {
+    background-color: #6a0dad !important; /* Cambiar el color de fondo a morado */
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    margin-bottom: 15px;
+}
+
+
+
+
+.btn-Login {
+    background-color: #6a0dad; /* Cambiar el color de fondo del botón a morado */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    /* Cambiar el color de fondo del botón a morado */
+    background-color: #6a0dad;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+    .btn-primary:hover {
+        background-color: #9e48ee; /* Cambiar el color de fondo del botón a morado claro al pasar el mouse */
+    }
+
+.card-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.0rem 1.5rem; /* Ajuste del padding para hacer la navbar un poco más ancha */
+    background-color: #6a0dad; /* Cambiar el color de fondo de la navbar a morado */
+}
+
+.navbar-brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.25rem;
+    margin-right: 1rem;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.nav-item {
+    margin-right: 0.5rem;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+    .dropdown-menu a {
+        display: block;
+        color: #212529;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+    }
+
+        .dropdown-menu a:hover {
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.btn-group {
+    display: inline-block;
+}
+
+    .btn-group a {
+        display: inline-block;
+        padding: 0.375rem 0.75rem;
+        text-decoration: none;
+        color: inherit;
+        border: 1px solid transparent;
+        cursor: pointer;
+        background-color: transparent;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.25rem;
+    }
+
+        .btn-group a:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+.ms-auto {
+    margin-left: auto;
+}
+
+
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px; /* Ajusta el ancho máximo según sea necesario */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+.separador {
+    color: #6a0dad;
+    border: 40px ;/* Color de la línea con opacidad */
+    height: 3px; /* Altura de la línea */
+    margin: 20px 0; /* Espacio alrededor del hr */
+}
+
