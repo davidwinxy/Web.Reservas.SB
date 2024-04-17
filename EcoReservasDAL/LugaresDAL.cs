@@ -44,6 +44,11 @@ namespace EcoReservasDAL
                 datos.Capacidad = pLugares.Capacidad;
                 datos.Descripcion = pLugares.Descripcion;
                 datos.ImagenUrl = pLugares.ImagenUrl;
+                datos.URL2 = pLugares.URL2;
+                datos.URL3 = pLugares.URL3;
+                datos.SitioWeb = pLugares.SitioWeb;
+                datos.Requisitos = pLugares.Requisitos;
+                datos.Normativas = pLugares.Normativas;
                 dbContext.Update(datos);
                 result = await dbContext.SaveChangesAsync();
             }

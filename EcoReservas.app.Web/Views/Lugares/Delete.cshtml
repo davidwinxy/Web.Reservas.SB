@@ -6,50 +6,29 @@
 
 
 <h3>Estas seguro de eliminar este lugar?</h3>
-<div>
-    <h4>Lugares</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Capacidad)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Capacidad)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImagenUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImagenUrl)
-        </dd>
-    </dl>
-    
+<div class="card">
+    <div class="card-body">
+        
+            <h5 class="card-title">@Model.Nombre</h5>
+        <div class="imagenes-container">
+            <img src="@Model.ImagenUrl" class="ImagenesDetalladas">
+            <img src="@Model.URL2" class="ImagenesDetalladas">
+            <img src="@Model.URL3" class="ImagenesDetalladas">
+        </div>
+            <hr class="separador" />
+            <p class="card-text">Dirección: @Model.Direccion</p>
+            <p class="card-text">Capacidad: @Model.Capacidad</p>
+            <p class="card-text">Descripción: @Model.Descripcion </p>
+            <p class="card-text">Requisitos:@Html.Raw(Model.Requisitos) </p>
+            <p class="card-text">Normativas:@Html.Raw(Model.Normativas) </p>
+    </div>
+</div>
+
+  <div class="center">
     <form asp-action="Delete" asp-controller="Lugares">
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a class="btn btn-primary" asp-action="Index">Cancelar</a>
     </form>
-</div>
+  </div>
+    
+

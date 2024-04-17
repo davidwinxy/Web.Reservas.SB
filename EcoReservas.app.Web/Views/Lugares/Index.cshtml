@@ -16,16 +16,14 @@
                     <div class="center">
                         <h5 class="card-title">@item.Nombre</h5>
                         <hr class="separador" />
-                        <p class="card-text">@item.Descripcion</p>
-                   
-                        <a href="#" class="btn btn-primary">Ver más</a>
-                    
+                        <p class="card-text">@Html.Raw(item.Descripcion)</p>
+                        <a href="@Url.Action("Details", new {Id = item.Id})" class="btn btn-primary"><i>Ver Más</i></a>
                         @if (isAdmin)
                         {
                             <td >
                                 <a href="@Url.Action("Edit", new {pId = item.Id})" class="btn btn-success"><i>EDITAR</i></a>
 
-                                <a href="@Url.Action("Delete", new {pId = item.Id})" class="btn btn-danger"><i>BORRAR</i></a>
+                                <a href="@Url.Action("Delete", new {Id = item.Id})" class="btn btn-danger"><i>BORRAR</i></a>
                             </td>
 
                       
@@ -37,3 +35,12 @@
     }
 </div>
 
+@section Scripts {
+<script>
+
+    $(document).ready(function () {
+        $('#descripcion').summernote();
+    });
+
+</script>
+}

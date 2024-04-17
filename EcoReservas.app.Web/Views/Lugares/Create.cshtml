@@ -3,56 +3,87 @@
 @{
     ViewData["Title"] = "Create";
 }
+<div class="center">
+    <h1>Crear Nuevo Lugar</h1>
 
-<h1>Create</h1>
-
-<h4>Lugares</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+    <hr />
+    <div class="center">
+        <form asp-action="Create" class="my-form">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label type="hidden" asp-for="Id" class="control-label"></label>
-                <input type="hidden" asp-for="Id" class="form-control" />
-                <span type="hidden" asp-validation-for="Id" class="text-danger"></span>
+            <div class="my-form-group">
+                <input type="hidden" asp-for="Id" class="my-form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="my-form-group">
                 <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
+                <input asp-for="Nombre" class="my-form-control" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="my-form-group">
                 <label asp-for="Direccion" class="control-label"></label>
-                <input asp-for="Direccion" class="form-control" />
+                <input asp-for="Direccion" class="my-form-control" />
                 <span asp-validation-for="Direccion" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="my-form-group">
                 <label asp-for="Capacidad" class="control-label"></label>
-                <input asp-for="Capacidad" class="form-control" />
+                <input asp-for="Capacidad" class="my-form-control" />
                 <span asp-validation-for="Capacidad" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="my-form-group">
                 <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
+                <textarea asp-for="Descripcion" class="my-form-control"></textarea>
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="my-form-group">
                 <label asp-for="ImagenUrl" class="control-label"></label>
-                <input asp-for="ImagenUrl" class="form-control" />
+                <input asp-for="ImagenUrl" class="my-form-control" />
                 <span asp-validation-for="ImagenUrl" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="my-form-group">
+                <label asp-for="URL2" class="control-label"></label>
+                <input asp-for="URL2" class="my-form-control" />
+                <span asp-validation-for="URL2" class="text-danger"></span>
+            </div>
+            <div class="my-form-group">
+                <label asp-for="URL3" class="control-label"></label>
+                <input asp-for="URL3" class="my-form-control" />
+                <span asp-validation-for="URL3" class="text-danger"></span>
+            </div>
+            <div class="my-form-group">
+                <label asp-for="SitioWeb" class="control-label"></label>
+                <input asp-for="SitioWeb" class="my-form-control" />
+                <span asp-validation-for="SitioWeb" class="text-danger"></span>
+            </div>
+            <div class="my-form-group">
+                <label asp-for="Requisitos" class="control-label"></label>
+                <textarea id="descripcion" asp-for="Requisitos" class="my-form-control"></textarea>
+                <span asp-validation-for="Requisitos" class="text-danger"></span>
+            </div>
+            <div class="my-form-group">
+                <label asp-for="Normativas" class="control-label"></label>
+                <textarea id="normativa" asp-for="Normativas" class="my-form-control"></textarea>
+                <span asp-validation-for="Normativas" class="text-danger"></span>
+            </div>
+            <div class="my-form-group">
+                <div class="center">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <a class="btn btn-primary" asp-action="Index">Cancelar</a>
+                </div>
             </div>
         </form>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
+   
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+
+        $(document).ready(function () {
+            $('#descripcion').summernote();
+            $('#normativa').summernote();
+        });
+       
+    </script>
 }

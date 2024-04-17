@@ -4,51 +4,44 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Detalles del lugar</h1>
 
-<div>
-    <h4>Lugares</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Capacidad)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Capacidad)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImagenUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImagenUrl)
-        </dd>
-    </dl>
+<div class="card">
+    <div class="card-body">
+        <input asp-for="Id" type="hidden" />
+
+            <h5 class="card-title">@Model.Nombre</h5>
+        <div class="imagenes-container">
+            <img src="@Model.ImagenUrl" class="ImagenesDetalladas">
+            <img src="@Model.URL2" class="ImagenesDetalladas">
+            <img src="@Model.URL3" class="ImagenesDetalladas">
+        </div>
+            <hr class="separador" />
+            <p class="card-text">Dirección: @Model.Direccion</p>
+            <p class="card-text">Capacidad: @Model.Capacidad</p>
+        <p class="card-text">Descripción:@Html.Raw(Model.Descripcion) </p>
+
+        <hr class="separador" />
+        <div class="center">
+            <div class="cardReglas">
+                <div class="cardRyM">
+                    <p class="card-text">Requisitos: @Html.Raw(Model.Requisitos)</p>
+                </div>
+                <div class="cardRyM">
+                    <p class="card-text">Normativas: @Html.Raw(Model.Normativas)</p>
+                </div>
+            </div>
+        </div>
+       
+       
+        
+
+    </div>
 </div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+<div class="center">
+    
+    <a href="@Url.Action("Creates","Reservas", new {Id = Model.Id})" class="btn btn-primary"><i>Reservar ya</i></a>
+
+    <a class="btn btn-primary" asp-action="Index">Regresar</a>
 </div>
+

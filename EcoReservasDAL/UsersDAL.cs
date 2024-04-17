@@ -20,6 +20,14 @@ namespace EcoReservasDAL
                 }
                 return user;
             }
-        
+        public static async Task Create(Users user)
+        {
+            using (var dbContext = new comunDB())
+            {
+                // Agregar el nuevo usuario a la base de datos
+                dbContext.Users.Add(user);
+                await dbContext.SaveChangesAsync();
+            }
+        }
     }
 }

@@ -16,13 +16,17 @@ namespace EcoReservas.app.Web.Controllers
             return View(lugares);
         }
 
-       
+
 
         // GET: Lugarescontroller/Details/5
-        public ActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
-
-            return View();
+            var lugar = await LugaresBL.GetById(id);
+            if (lugar == null)
+            {
+                return NotFound();
+            }
+            return View(lugar);
         }
 
         // GET: Lugarescontroller/Create
@@ -72,9 +76,16 @@ namespace EcoReservas.app.Web.Controllers
         }
 
         // GET: Lugarescontroller/Delete/5
-        public ActionResult Delete(int id)
+        public async Task< ActionResult> Delete(int id)
         {
-            return View();
+            {
+                var lugar = await LugaresBL.GetById(id);
+                if (lugar == null)
+                {
+                    return NotFound();
+                }
+                return View(lugar);
+            }
         }
 
         // POST: Lugarescontroller/Delete/5

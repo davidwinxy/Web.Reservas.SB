@@ -41,6 +41,31 @@
             <span asp-validation-for="ImagenUrl" class="text-danger"></span>
         </div>
         <div class="form-group">
+            <label asp-for="URL2" class="control-label"></label>
+            <input asp-for="URL2" class="form-control" />
+            <span asp-validation-for="URL2" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="URL3" class="control-label"></label>
+            <input asp-for="URL3" class="form-control" />
+            <span asp-validation-for="URL3" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="SitioWeb" class="control-label"></label>
+            <input asp-for="SitioWeb" class="form-control" />
+            <span asp-validation-for="SitioWeb" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Requisitos" class="control-label"></label>
+            <textarea id="descripcion" asp-for="Requisitos" class="form-control"></textarea>
+            <span asp-validation-for="Requisitos" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Requisitos" class="control-label"></label>
+            <textarea id="descripcion" asp-for="Normativas" class="form-control"></textarea>
+            <span asp-validation-for="Normativas" class="text-danger"></span>
+        </div>
+        <div class="form-group">
             <input type="submit" value="Save" class="btn btn-primary" /> |
             <a class="btn btn-primary" asp-action="Index">Cancelar</a>
         </div>
@@ -52,4 +77,11 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+
+        $(document).ready(function () {
+            $('#descripcion').summernote();
+        });
+
+    </script>
 }

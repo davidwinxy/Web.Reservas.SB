@@ -25,7 +25,7 @@
                                 <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Explorar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Mis Reservas</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Reservas" asp-action="GetAllUsers">Mis Reservas</a>
                             </li>
                             @if (User.IsInRole("Admin"))
                             {
@@ -67,6 +67,14 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+
+    
+  
 </body>
 
 </html>

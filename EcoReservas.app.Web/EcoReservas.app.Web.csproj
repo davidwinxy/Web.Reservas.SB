@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Lugarescontroller\" />
+    <Folder Include="Views\Userscontroller\" />
   </ItemGroup>
 
 </Project>

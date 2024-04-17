@@ -32,15 +32,23 @@ namespace EcoReservas.app.Web.Controllers
         // POST: Userscontroller/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(Users user)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                // Asignar el rol de usuario normal (RoleId = 2) al nuevo usuario
+                user.RoleId = 2;
+
+                // Guardar el nuevo usuario en la base de datos
+                await UsersBL.Create(user);
+
+                // Redirigir a la acción Index
+                return RedirectToAction(nameof(Login));
             }
             catch
             {
-                return View();
+                // En caso de error, regresar a la vista de creación con el modelo de usuario
+                return View(user);
             }
         }
 
@@ -101,7 +109,7 @@ namespace EcoReservas.app.Web.Controllers
                 {
                     user.Role = await RolesBL.GetById(new Roles { Id = user.RoleId });
 
-                    var claims = new[] { new Claim(ClaimTypes.Name, user.UserName), new Claim(ClaimTypes.Role, user.Role.Name) };
+                    var claims = new[] { new Claim(ClaimTypes.Name, user.UserName), new Claim(ClaimTypes.Role, user.Role.Name), new Claim("Id",user.Id.ToString()) };
                     var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(identity));
                 }
@@ -138,6 +146,15 @@ namespace EcoReservas.app.Web.Controllers
             // Redirecciona a la acción Index del controlador Lugares
             return RedirectToAction("Index", "Lugares");
         }
+
+
+
+
+
+ 
+       
     }
+
+
 }
 
